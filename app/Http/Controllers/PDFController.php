@@ -20,16 +20,19 @@ class PDFController extends Controller
             'contact' =>$request->contact,
             'email' =>$request->email,
             'address' =>$request->address,
+//------------------------------------------------------------------
             'projects' => $request->projectsname,
+//------------------------------------------------------------------
             'educations' => $request->education,
             'alleducationDetails' => $request->educationDetails,
             'alleducationStatus' => $request->educationstatus,
-            #'experience' => $request->experienceDetails,
+//------------------------------------------------------------------
             'experience' => $request->experience,
             'allexperienceDetails' => $request->experienceDetails,
+//------------------------------------------------------------------
             ];
         $pdf = PDF::loadView('PDF-File', $data);
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download('CV.pdf');
     }
     
 }
