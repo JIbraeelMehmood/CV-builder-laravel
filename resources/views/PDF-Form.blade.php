@@ -5,11 +5,23 @@
     <div class="container">
         <h4> <b>Create PDF</b></h4>
         <p>Make Your CV with Fast & Efficient way </p>
-        <form class="theme-form" action="{{ route('generate-pdf') }}" method="post" name="cv_form" id="cv_form">
+        <form class="theme-form" action="{{ route('generate-pdf') }}" method="post" enctype="multipart/form-data" name="cv_form" id="cv_form">
             @csrf
             <p><b>Personal Info:</b></p>
             <div class="form-row">
 <!-- -------------------------------------------------------------------------------------- -->
+                <div class="form-group">
+                    <label for="image" class="col-md-4 col-form-label text-md-left">{{ __('Image:') }}</label>
+                    <div class="col-md-12">
+                        <input class=" p-0 bg-light  @error('image') is-invalid @enderror"  value="{{ old('image') }}" required autocomplete="image" autofocus  id="image" type="file" name="image">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
+                </div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
                 <div class="form-group ">
                     <label for="name" class="col-md-4 col-form-label text-md-left">{{ __('Name:') }}</label>
                     <div class="col-md-12">

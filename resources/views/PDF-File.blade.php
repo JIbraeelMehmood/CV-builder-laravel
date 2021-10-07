@@ -10,7 +10,7 @@
     <div class="wrapper mt-lg-5">
         <div class="sidebar-wrapper">
             <div class="profile-container">
-                <img class="profile" src="assets/images/profile.png" alt="" />
+                <img class="profile" src={{ $imageurl }} alt="" />
                 <h1 class="name">{{ $name }}</h1>
                 <h3 class="tagline">Full Stack Developer</h3>
             </div><!--//profile-container-->
